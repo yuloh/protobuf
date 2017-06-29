@@ -1,0 +1,19 @@
+syntax = "proto3";
+
+package foo;
+
+option php_generic_services = true;
+option php_namespace = "Php\\Test";
+
+service Greeter {
+  rpc SayHello (HelloRequest) returns (HelloReply) {}
+  rpc sayHelloAgain (HelloRequest) returns (HelloReply) {}
+}
+
+message HelloRequest {
+  string name = 1;
+}
+
+message HelloReply {
+  string message = 1;
+}
